@@ -78,7 +78,7 @@ defmodule Httpserver.SubmitBetResponse do
   @type t :: %__MODULE__{
           errors: [CommandResponseError.t()],
           priceChanges: [SubmitBetPriceChange.t()],
-          bets: []
+          bets: [SubmitBetBetList.t()]
         }
 
   defstruct [

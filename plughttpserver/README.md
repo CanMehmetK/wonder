@@ -14,7 +14,7 @@ When app run Supervisor
 What about not "text/*" contents (we ll need proper http to response a request for browser...)
 first lets start with an api then browser may be better for easy up things...
 
-in to deps added {:poison, "~> 3.1"} 
+in to deps added ```{:poison, "~> 3.1"} ```
 
 https://elixir-lang.org/getting-started/basic-types.html |> The problem at here is some types are not exist in Elixir
 for Guid, Decimal types using 
@@ -24,7 +24,13 @@ Remember that using as guard this types may be headache!() at some points
 https://hexdocs.pm/elixir/guards.html |> What are the Guards()
 
 
+https://hexdocs.pm/ex_unit/1.12/ExUnit.Case.html |>
 
+  For testing in test folder appname_test.ex file generated already |> use Plug.Test added Conveniences for testing plugs.
+
+  ```mix test ./test/httpserver_test.exs``` |> runs only one test also calling test by tag given at spec is possible 
+
+  ```elixir httpserver_test.exs``` also runs test when you execute command in same folder with test exs file
 
 ## Installation
 

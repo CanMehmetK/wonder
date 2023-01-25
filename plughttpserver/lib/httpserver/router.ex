@@ -40,6 +40,11 @@ defmodule Httpserver.Router do
     send_resp(conn |> put_resp_content_type("application/json"), 200, Jason.encode!(response))
   end
 
+  post "/test" do
+    response = Map.from_struct(SubmitBetResponse)
+    send_resp(conn |> put_resp_content_type("application/json"), 200, Jason.encode!(response))
+  end
+
   #  default case for nothing matching about
   match _ do
     send_resp(conn, 404, "There is not route for your call")

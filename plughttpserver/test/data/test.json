@@ -1,0 +1,23 @@
+{
+	"userID": 1,
+	"betCriteria": {
+		"jwtToken": "string",
+		"clientId": 1,
+		"clientPin": 0,
+		"clientIpAddress": "string",
+		"takeBack": false,
+		"bets": [{
+				"eventBetTypeId": 1,
+				"eventBetTypeMapDetailMapId": 1,
+				"eventDetailOfferedOdd": 5,
+				"totalOdds": 5,
+				"originalStake": 10,
+				"payout": 50,
+				"luckyNumberselections": [
+					1
+				]
+			}
+		],
+		"combinationBetInfos": null
+	}
+}
