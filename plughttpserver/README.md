@@ -16,6 +16,13 @@ first lets start with an api then browser may be better for easy up things...
 
 in to deps added {:poison, "~> 3.1"} 
 
+https://elixir-lang.org/getting-started/basic-types.html |> The problem at here is some types are not exist in Elixir
+for Guid, Decimal types using 
+Ecto.Guid and Decimal library, so added to deps... in project file.
+Remember that using as guard this types may be headache!() at some points 
+
+https://hexdocs.pm/elixir/guards.html |> What are the Guards()
+
 
 
 
