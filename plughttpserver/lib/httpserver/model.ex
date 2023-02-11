@@ -67,7 +67,6 @@ defmodule Httpserver.CommandResponseError do
       guid: guid
     }
   end
-
 end
 
 defmodule Httpserver.SubmitBetResponse do
@@ -89,10 +88,27 @@ defmodule Httpserver.SubmitBetResponse do
     # %SubmitBetBetList {}
     :bets
   ]
+
+  @spec decode!(map()) :: t()
+  def decode!() do
+    #
+    %__MODULE__{
+      erros: Enum.map(:errors, &CommandResponseError.decode!/1)
+      priceChanges: Enum.map(:priceChanges, &SubmitBetPriceChange.decode!/1)
+      bets: Enum.map(:bets, &SubmitBetPriceChange.decode!/1)
+    }
+  end
 end
 
 defmodule Httpserver.SubmitBetCommandResponse do
   @moduledoc ""
+
+  @type t :: %__MODULE__{
+responseType: binary(),
+responseMessage: binary(),
+responseObject: %SubmitBetResponse
+  }
+
   defstruct [
     :response_type,
     :response_message,

@@ -1,6 +1,8 @@
 defmodule Httpserver.Router do
   use Plug.Router
 
+  alias Httpserver.SubmitBetResponse
+
   # using Plug.Debugger for cases when an error occurs, like with the error of decoding json, a server responds with a nice error page.
   if Mix.env() == :dev do
     use Plug.Debugger
@@ -41,7 +43,8 @@ defmodule Httpserver.Router do
   end
 
   post "/test" do
-    response = Map.from_struct(SubmitBetResponse)
+    response = %Httpserver.SubmitBetResponse{}
+    IO.inspect(response, label: "empty response generated")
     send_resp(conn |> put_resp_content_type("application/json"), 200, Jason.encode!(response))
   end
 
